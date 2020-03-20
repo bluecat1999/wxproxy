@@ -12,6 +12,7 @@ wxMsg.lua
 *.o
 docs
 test/result
+test/td/*
 src/wxutil/wxutil.so
 pkgs/lib/wxutil.so
 src/wxutil/tinyxml2.o
