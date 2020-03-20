@@ -1,0 +1,31 @@
+GCC=g++
+
+INCLUDEDIR=  -I./include  -I/usr/include/lua5.1
+
+LIBDIR=  -l crypto   
+
+# CPPFLAGS = -g -W -Wall -fPIC
+CPPFLAGS = -O3 -W -Wall -fPIC 
+
+TARGET = wxutil.so
+
+OBJS =  wxutil.o tinyxml2.o 
+	
+.PHONY: all clean install
+
+.c.o: 
+	$(GCC) -c $(CPPFLAGS) $(INCLUDEDIR)  -o $@ $<
+
+tinyxml2.o: tinyxml2.cpp tinyxml2.h
+
+all: $(TARGET)
+
+clean:
+	rm -f *.o 
+	rm -f wxutil.so
+
+$(TARGET): $(OBJS) 
+	$(GCC)  $(LIBDIR) -shared -o  $@ $(OBJS)  
+
+install	: $(TARGET)
+	cp --force wxutil.so  ../../pkgs/lib/

@@ -1,0 +1,32 @@
+ --copy to init.lua then modify it to suit real env
+ local gsetting = {
+    mysql_conn = { host='127.0.0.1',port='3306',path='',database='b2b',user='root',password='1'},
+    redis_conn = { host='127.0.0.1',port='6379',unixsocket='',password='',database='0'},
+    real_wx_url ='http://127.0.0.1/site/web/index.php/wechat_handler/index.html',
+    wxmsg_queue = {
+         text  = {
+            class=[[common\components\wechat\queue\FacadeJob]],
+            adapter = [[KefuAdapter]],
+            channel = "wxmsg-queue",ttr=3,attemps=3,
+            cn_name = '文本消息'
+        },
+        image =  {
+            class=[[common\components\wechat\queue\MediaJob]], channel = "wxmedia-queue",ttr=3,attemps=3,name='图片消息'
+        },
+        video =  {
+            class=[[common\components\wechat\queue\MediaJob]], channel = "wxmedia-queue",ttr=3,attemps=3,name='语音消息'
+        },
+        voice =  {
+            class=[[common\components\wechat\queue\MediaJob]], channel = "wxmedia-queue",ttr=3,attemps=3,name='视频消息'
+        },
+        file =  {
+            class=[[common\components\wechat\queue\MediaJob]], channel = "wxmedia-queue",ttr=3,attemps=3,name='文件发送消息'
+        },
+        shortvideo = {}, --罗列出来，不再遍历查找key是否存在
+        location = {},
+        link    = {}
+    },
+ }
+ function getSetting()
+    return gsetting
+ end

@@ -1,0 +1,1 @@
+<xml><ToUserName><![CDATA[gh_xxx]]></ToUserName><FromUserName><![CDATA[oi-OfwLo10IG8_Qos]]></FromUserName><CreateTime>1532590985</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[hghg]]></Content><MsgId>6582428159288591814</MsgId></xml>

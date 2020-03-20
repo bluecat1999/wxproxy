@@ -1,0 +1,1 @@
+ab -c 100 -n 10000 -T POST -p test1.txt 'http://xxx.com/site/web/index.php/wechat_handler/index.html?shop_id=3&signature=c14649da5ea96f053a82844e350244fc1896&timestamp=1532590985&nonce=1149712373&openid=oi-OfwLo10IG8ZPFaZKelsf3_Qo'
